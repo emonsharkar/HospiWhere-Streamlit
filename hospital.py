@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 # Load the dataset
-shishir = pd.read_csv('dataset_hospital_organized.csv')
+no = pd.read_csv('dataset_hospital_organized.csv')
 
 # Sidebar input fields
 st.sidebar.header('Enter Preferences')
@@ -50,4 +50,5 @@ if st.button('Submit'):
             # Display hospital name and details textually
             st.write(f"{idx}. {hospital_name}")
             st.write(details_string)
+
 
