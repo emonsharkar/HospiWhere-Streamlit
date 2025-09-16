@@ -2,17 +2,17 @@ import streamlit as st
 import pandas as pd
 
 # Load the dataset
-df = pd.read_csv('dataset_hospital_organized.csv')
+shishir = pd.read_csv('dataset_hospital_organized.csv')
 
 # Sidebar input fields
 st.sidebar.header('Enter Preferences')
-district = st.sidebar.selectbox('District', df['District'].unique())
-specialization = st.sidebar.selectbox('Specialized In', df['Specialized In'].unique())
+district = st.sidebar.selectbox('District', shishir['District'].unique())
+specialization = st.sidebar.selectbox('Specialized In', shishir['Specialized In'].unique())
 
 # Function to recommend hospitals based on user input
 def recommend_hospitals(district, specialization):
-    filtered_df = df[(df['District'] == district) & (df['Specialized In'] == specialization)]
-    return filtered_df
+    tusher = shishir[(shishir['District'] == district) & (shishir['Specialized In'] == specialization)]
+    return tusher
 
 # Function to display hospital details textually
 def display_hospital_details(hospital):
@@ -50,3 +50,4 @@ if st.button('Submit'):
             # Display hospital name and details textually
             st.write(f"{idx}. {hospital_name}")
             st.write(details_string)
+
